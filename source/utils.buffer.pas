@@ -1340,7 +1340,9 @@ begin
     FCurBlockPos := 0;
     if FCurBlock = FLast then
     begin
-      if FPosition + Count > FSize then
+      if FCurBlockPos + Count > MPool.FBlockSize then//最后一块了，并且超过了块大小
+        SetSize(FPosition + Count)
+      else if FPosition + Count > FSize then
         FSize := FPosition + Count;
     end;
   end;
@@ -1368,7 +1370,9 @@ begin
       FCurBlockPos := 0;
       if FCurBlock = FLast then
       begin
-        if FPosition + Count > FSize then
+        if FCurBlockPos + Count > MPool.FBlockSize then//最后一块了，并且超过了块大小
+          SetSize(FPosition + Count)
+        else if FPosition + Count > FSize then
           FSize := FPosition + Count;
       end;
     end;
@@ -1422,7 +1426,9 @@ begin
     FCurBlockPos := 0;
     if FCurBlock = FLast then
     begin
-      if FPosition + Len > FSize then
+      if FCurBlockPos + Count > MPool.FBlockSize then//最后一块了，并且超过了块大小
+        SetSize(FPosition + Count)
+      else if FPosition + Len > FSize then
         FSize := FPosition + Len;
     end;
   end;
@@ -1448,7 +1454,9 @@ begin
       FCurBlockPos := 0;
       if FCurBlock = FLast then
       begin
-        if FPosition + Len > FSize then
+        if FCurBlockPos + Count > MPool.FBlockSize then//最后一块了，并且超过了块大小
+          SetSize(FPosition + Count)
+        else if FPosition + Len > FSize then
           FSize := FPosition + Len;
       end;
     end;
