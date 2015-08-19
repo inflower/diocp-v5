@@ -1340,7 +1340,11 @@ begin
     FCurBlockPos := 0;
     if FCurBlock = FLast then
     begin
+<<<<<<< HEAD
       if Count > MPool.FBlockSize then//最后一块了，并且超过了块大小
+=======
+      if Count > MPool.FBlockSize then //已经超过最后一块的大小
+>>>>>>> ymofen/master
         SetSize(FPosition + Count)
       else if FPosition + Count > FSize then
         FSize := FPosition + Count;
@@ -1370,7 +1374,11 @@ begin
       FCurBlockPos := 0;
       if FCurBlock = FLast then
       begin
+<<<<<<< HEAD
         if Count > MPool.FBlockSize then//最后一块了，并且超过了块大小
+=======
+        if Count > MPool.FBlockSize then //已经超过最后一块的大小
+>>>>>>> ymofen/master
           SetSize(FPosition + Count)
         else if FPosition + Count > FSize then
           FSize := FPosition + Count;
