@@ -12,7 +12,7 @@
  *    ///   如果搜索不到返回-1
  *    /// </summary>
  *    function SearchBuffer(subBuf:PAnsiChar; subBufLen:Cardinal): Integer;
- *
+ *2. 2015年8月20日修改DxMemoryStream的写入问题
  *)
 
 unit utils.buffer;
